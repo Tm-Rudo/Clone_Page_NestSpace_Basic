@@ -277,8 +277,8 @@ button {
 
 /* responsive cái navbar */
 /* luồng thì khi thu nhỏ ở dạng mobile thì cái nav-left sẽ bị ẩn đim thay bằng cái icon */
+
 @media (max-width: 768px) {
-  /* banner */
   .nav-left,
   .nav-right {
     display: none;
@@ -286,51 +286,79 @@ button {
 
   .navbar {
     display: flex;
-    align-items: center; /* Căn giữa icon menu và logo theo chiều dọc */
-    justify-content: space-between; /* Đưa icon về trái, logo ra giữa */
-    padding: 10px 15px; /* Thêm khoảng cách cho dễ nhìn */
-    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    position: fixed; /* Dùng fixed thay absolute để navbar cố định khi scroll */
     top: 0;
     left: 0;
     width: 100%;
-    background: white; /* Giữ nền trắng nếu cần */
-    z-index: 1000; /* Đảm bảo nằm trên carousel */
+    background: white;
+    z-index: 1000;
   }
 
   .menu-toggle {
     display: block;
-    font-size: 24px; /* Điều chỉnh kích thước nếu cần */
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-left {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  /* Khi menu mở */
+  .nav-left.show {
+    display: block; /* Sửa từ flex thành block để menu dọc rõ ràng hơn */
+  }
+
+  .nav {
+    flex-direction: column; /* Menu hiển thị dọc */
+    padding: 10px 0;
+  }
+
+  .nav-item {
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
   }
 
   .nav-center {
-    flex-grow: 1; /* Để logo tự căn giữa */
+    flex-grow: 1;
     text-align: center;
   }
 
   .nav-center img {
-    height: 30px; /* Điều chỉnh kích thước logo */
+    height: 30px;
   }
 
-  /* carousel */
+  /* Các phần khác giữ nguyên */
   .carousel-inner img {
-    height: 100vh; /* Chiếm 75% chiều cao màn hình */
-    object-fit: cover; /* Đảm bảo hình không bị méo */
+    height: 100vh;
+    object-fit: cover;
   }
 
-  /* info */
   .info {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  /* divider */
   .divider {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    border: orange;
   }
 
-  /* 3 cái demo */
   .demo {
     width: 100%;
     display: grid;
@@ -341,7 +369,7 @@ button {
 
   .item {
     display: flex;
-    flex-direction: column; /* Đảm bảo ảnh trên, text dưới */
+    flex-direction: column;
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
@@ -349,25 +377,20 @@ button {
 
   .image {
     width: 100%;
-    order: -1; /* Đảm bảo ảnh luôn nằm trên */
+    order: -1;
   }
 
   .text {
     width: 100%;
-    order: 1; /* Đảm bảo văn bản luôn nằm dưới */
+    order: 1;
   }
 
-  /* view All */
   .viewAll {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     margin-bottom: 50px;
     margin-top: 20px;
     cursor: pointer;
   }
 
-  /* footer */
   .contact {
     width: 100%;
     padding-left: 10px;
