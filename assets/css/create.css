@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: 'Arial', sans-serif; */
+  background-color: #f5f5f5;
+}
+
+.form {
+  width: 35%;
+  height: 70%;
+  /* margin-top: 30px;
+      margin: auto; */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+  width: 100%;
+  background-color: green;
+  text-transform: uppercase;
+}

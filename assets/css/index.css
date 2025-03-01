@@ -50,6 +50,8 @@ body {
   gap: 10px;
   align-items: center;
   padding-right: 5px;
+
+  /* background-color: rebeccapurple; */
 }
 
 .nav-right img {
@@ -57,6 +59,27 @@ body {
   height: 25px;
   cursor: pointer;
 }
+
+.login,
+.create {
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 1;
+  width: 60px;
+  height: 60px;
+  padding-top: 15px;
+  background-color: #f5f5f5;
+}
+
+
+.create,
+.login,
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .menu-toggle {
   display: none; /* Ẩn menu toggle trên desktop */
 }
